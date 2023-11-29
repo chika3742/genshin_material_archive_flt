@@ -1,0 +1,6 @@
+base_locale: ja
+namespaces: true
+input_directory: assets/i18n
+input_file_pattern: .i18n.yaml
+output_directory: lib/i18n.g
+output_format: multiple_files
