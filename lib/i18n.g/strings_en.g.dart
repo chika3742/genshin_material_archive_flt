@@ -37,6 +37,7 @@ class _StringsUiEn implements _StringsUiJa {
 
 	// Translations
 	@override late final _StringsUiCommonEn common = _StringsUiCommonEn._(_root);
+	@override late final _StringsUiPageTitlesEn pageTitles = _StringsUiPageTitlesEn._(_root);
 }
 
 // Path: properNouns
@@ -56,4 +57,16 @@ class _StringsUiCommonEn implements _StringsUiCommonJa {
 
 	// Translations
 	@override String get cancel => 'Cancel';
+	@override String get ok => 'OK';
+}
+
+// Path: ui.pageTitles
+class _StringsUiPageTitlesEn implements _StringsUiPageTitlesJa {
+	_StringsUiPageTitlesEn._(this._root);
+
+	@override final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get home => 'Home';
+	@override String get characters => 'Characters';
 }

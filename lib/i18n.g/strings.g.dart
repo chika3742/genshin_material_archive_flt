@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 2 (1 per locale)
+/// Strings: 8 (4 per locale)
 ///
-/// Built on 2023-11-29 at 07:21 UTC
+/// Built on 2023-11-30 at 08:12 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -46,13 +46,13 @@ enum AppLocale with BaseAppLocale<AppLocale, _StringsJa> {
 /// Method A: Simple
 ///
 /// No rebuild after locale change.
-/// Translation happens during initialization of the widget (call of t).
+/// Translation happens during initialization of the widget (call of tx).
 /// Configurable via 'translate_var'.
 ///
 /// Usage:
-/// String a = t.someKey.anotherKey;
-/// String b = t['someKey.anotherKey']; // Only for edge cases!
-_StringsJa get t => LocaleSettings.instance.currentTranslations;
+/// String a = tx.someKey.anotherKey;
+/// String b = tx['someKey.anotherKey']; // Only for edge cases!
+_StringsJa get tx => LocaleSettings.instance.currentTranslations;
 
 /// Method B: Advanced
 ///
@@ -66,9 +66,9 @@ _StringsJa get t => LocaleSettings.instance.currentTranslations;
 /// );
 ///
 /// Step 2:
-/// final t = Translations.of(context); // Get t variable.
-/// String a = t.someKey.anotherKey; // Use t variable.
-/// String b = t['someKey.anotherKey']; // Only for edge cases!
+/// final tx = Translations.of(context); // Get tx variable.
+/// String a = tx.someKey.anotherKey; // Use tx variable.
+/// String b = tx['someKey.anotherKey']; // Only for edge cases!
 class Translations {
 	Translations._(); // no constructor
 
@@ -86,9 +86,9 @@ class TranslationProvider extends BaseTranslationProvider<AppLocale, _StringsJa>
 /// Configurable via 'translate_var'.
 ///
 /// Usage (e.g. in a widget's build method):
-/// context.t.someKey.anotherKey
+/// context.tx.someKey.anotherKey
 extension BuildContextTranslationsExtension on BuildContext {
-	_StringsJa get t => TranslationProvider.of(this).translations;
+	_StringsJa get tx => TranslationProvider.of(this).translations;
 }
 
 /// Manages all translation instances and the current locale

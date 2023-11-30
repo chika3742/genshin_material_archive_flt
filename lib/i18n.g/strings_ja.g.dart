@@ -46,6 +46,7 @@ class _StringsUiJa {
 
 	// Translations
 	late final _StringsUiCommonJa common = _StringsUiCommonJa._(_root);
+	late final _StringsUiPageTitlesJa pageTitles = _StringsUiPageTitlesJa._(_root);
 }
 
 // Path: ui.common
@@ -56,4 +57,16 @@ class _StringsUiCommonJa {
 
 	// Translations
 	String get cancel => 'キャンセル';
+	String get ok => 'OK';
+}
+
+// Path: ui.pageTitles
+class _StringsUiPageTitlesJa {
+	_StringsUiPageTitlesJa._(this._root);
+
+	final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	String get home => 'ホーム';
+	String get characters => 'キャラクター';
 }

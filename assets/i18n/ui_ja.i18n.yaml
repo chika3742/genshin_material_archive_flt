@@ -1,2 +1,7 @@
 common:
   cancel: キャンセル
+  ok: OK
+
+pageTitles:
+  home: ホーム
+  characters: キャラクター
