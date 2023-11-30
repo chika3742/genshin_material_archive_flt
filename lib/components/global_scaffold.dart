@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:genshin_material_flt/components/my_navigation_drawer.dart';
 
 import '../i18n.g/strings.g.dart';
 
@@ -19,31 +19,9 @@ class GlobalScaffold extends ConsumerWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(ref.watch(pageTitleProvider)),
       ),
-      drawer: NavigationDrawer(
-        children: [
-          NavDrawerItem(title: tx.ui.pageTitles.home, to: "/"),
-          NavDrawerItem(title: tx.ui.pageTitles.characters, to: "/characters"),
-        ],
-      ),
+      drawer: const MyNavigationDrawer(),
       body: body,
     );
   }
 }
 
-class NavDrawerItem extends StatelessWidget {
-  const NavDrawerItem({super.key, required this.title, required this.to});
-
-  final String title;
-  final String to;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      onTap: () {
-        context.pop();
-        context.go(to);
-      },
-    );
-  }
-}
